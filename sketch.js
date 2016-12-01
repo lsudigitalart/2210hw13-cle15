@@ -50,5 +50,8 @@ image(person,0,ly,mouseX,200);
 image(pen,0,100,100,mouseY);
 image(pen,0,mouseX,sz,mouseY);
 
+  fill(30,50,120,20);
+  ellipse(mouseX,mouseY,40,20);
+
 }
 //riptime
