@@ -5,13 +5,17 @@ var shine = 1;
 var ly = 0;
 var ty = 0;
 var sz = 50;
+//var millis
 function preload(){
 soldier = loadImage("IMG/center_atom.png");
 bullet = loadImage("IMG/Untitled-1.png")
+//mySound = loadSound("music/Alan Walker - Fade[NCS Release].mp3");
 }
 function setup() {
   createCanvas(400, 400);
+
   angleMode(DEGREES);
+  //mySound.loop();
 }
 //
 function draw() {
@@ -41,9 +45,10 @@ function draw() {
   rotate(r);
   scale(s);
   println(t);
-image(soldier,0,100,100,200);
-fill(29,50);
-rotate(180);
-image(bullet,0,ty,sz,100);
+shine = .5;
+image(soldier,0,ly,mouseX,200);
+image(bullet,0,100,100,mouseY);
+image(bullet,0,mouseX,sz,mouseY);
 
 }
+//riptime
