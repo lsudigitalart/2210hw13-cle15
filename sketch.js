@@ -5,17 +5,19 @@ var shine = 1;
 var ly = 0;
 var ty = 0;
 var sz = 50;
+//var mySound;
 //var millis
 function preload(){
 person = loadImage("IMG/center_atom.png");
 pen = loadImage("IMG/Untitled-1.png")
-//mySound = loadSound("music/Alan Walker - Fade[NCS Release].mp3");
 }
 function setup() {
   createCanvas(400, 400);
   background(20,120,45,200);
   angleMode(DEGREES);
+//  mySound = loadSound("music/Alan Walker - Fade[NCS Release].mp3");
   //mySound.loop();
+  //mySound.play();
 }
 //
 function draw() {
@@ -41,16 +43,26 @@ function draw() {
 } else {
   sz--;
 }
+if(200>mouseX>100 && 200<mouseX<300)
+{
+  frameRate(20);
+}
+else if(300<mouseX<400 && 0<mouseX<300)
+{
+  frameRate(60);
+}
   translate(t, ty);
   rotate(r);
   scale(s);
   println(t);
 shine = .5;
+fill(100,240,30,100);
+ellipse(mouseX,mouseY, 50, 100);
 image(person,0,ly,mouseX,200);
 image(pen,0,100,100,mouseY);
 image(pen,0,mouseX,sz,mouseY);
 
-  fill(30,50,120,20);
+  fill(230,150,120,20);
   ellipse(mouseX,mouseY,40,20);
 
 }
